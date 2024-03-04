@@ -3,6 +3,7 @@ import PIL.Image, PIL.ImageTk
 import tkinter as tk
 import urllib3
 from io import BytesIO
+import pokeapi
 
 #look into customer tkinter for better gui
 
