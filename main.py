@@ -1,41 +1,49 @@
 import pypokedex
 import PIL.Image, PIL.ImageTk
 import tkinter as tk
+import ttkbootstrap as tb
+from ttkbootstrap.constants import *
 import urllib3
 from io import BytesIO
-import pokeapi
 
-#look into customer tkinter for better gui
+'''
+Confirm all tkinter stuff has moved to ttkbootstrap | ttkbootstrap.readthedocs.io
+figure out if I can scale window better?
+height / weight math 
+history?
+'''
 
-window = tk.Tk()
-window.geometry("600x500")
+#window = tk.Tk()
+window = tb.Window(themename="minty")
+window.iconbitmap('images/pokedex.ico')
+window.geometry("800x700")
 window.title("PokeDex")
 window.config(padx=10, pady=10)
 
 
 
 
-title_label = tk.Label(window, text="Pokedex")
-title_label.config(font=("Arial", 32))
+title_label = tb.Label(window, text="Pokedex", font=("Helvetica", 32))
+# title_label.config(font=("Arial", 32))
 title_label.pack(padx=10, pady=10)
 
-pokemon_image = tk.Label(window)
+pokemon_image = tb.Label(window, font=("Helvetica", 10))
 pokemon_image.pack(padx=10, pady=10)
 
-pokemon_information = tk.Label(window)
-pokemon_information.config(font=("Arial", 10))
+pokemon_information = tb.Label(window, font=("Helvetica", 10))
+# pokemon_information.config(font=("Arial", 10))
 pokemon_information.pack(padx=10, pady=10)
 
-pokemon_types = tk.Label(window)
-pokemon_types.config(font=("Arial",10))
+pokemon_types = tb.Label(window, font=("Helvetica", 10))
+# pokemon_types.config(font=("Arial",10))
 pokemon_types.pack(padx=10, pady=10)
 
-pokemon_height = tk.Label(window)
-pokemon_height.config(font=("Arial", 10))
+pokemon_height = tb.Label(window, font=("Helvetica", 10))
+# pokemon_height.config(font=("Arial", 10))
 pokemon_height.pack(padx=10, pady=10)
 
-pokemon_weight = tk.Label(window)
-pokemon_weight.config(font=("Arial", 10))
+pokemon_weight = tb.Label(window, font=("Helvetica", 10))
+# pokemon_weight.config(font=("Arial", 10))
 pokemon_weight.pack(padx=10, pady=10)
 
 #FUNCTION Load Pokemon
@@ -57,16 +65,16 @@ def load_pokemon():
     
 
 
-label_id_name = tk.Label(window, text="ID or Pokemon Name")
-label_id_name.config(font=("Arial",20))
+label_id_name = tb.Label(window, text="ID or Pokemon Name", font=("Helvetica", 28))
+# label_id_name.config(font=("Arial",20))
 label_id_name.pack(padx=10, pady=10)
 
-text_id_name = tk.Text(window, height=1)
-text_id_name.config(font=("Arial", 20))
+text_id_name = tb.Text(window, height=1)
+# text_id_name.config(font=("Arial", 20))
 text_id_name.pack(padx=10, pady=10)
 
-btn_load = tk.Button(window, text="Enter", command=load_pokemon)
-btn_load.config(font=("Arial", 20))
+btn_load = tb.Button(window, text="Enter", bootstyle=DEFAULT, command=load_pokemon)
+# btn_load.config(font=("Arial", 20))
 btn_load.pack(padx=10, pady=10)
 
 window.mainloop()
