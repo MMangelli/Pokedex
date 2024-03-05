@@ -11,6 +11,7 @@ Confirm all tkinter stuff has moved to ttkbootstrap | ttkbootstrap.readthedocs.i
 figure out if I can scale window better?
 height / weight math 
 history?
+venv files w/ github?
 '''
 
 #window = tk.Tk()
@@ -73,7 +74,9 @@ text_id_name = tb.Text(window, height=1)
 # text_id_name.config(font=("Arial", 20))
 text_id_name.pack(padx=10, pady=10)
 
-btn_load = tb.Button(window, text="Enter", bootstyle=DEFAULT, command=load_pokemon)
+btn_load = tb.Style()
+btn_load.configure('INFO.TButton', font=("Helvetica", 22))
+btn_load = tb.Button(window, text="Enter", bootstyle=INFO, style="INFO.Tbutton", command=load_pokemon)
 # btn_load.config(font=("Arial", 20))
 btn_load.pack(padx=10, pady=10)
 
