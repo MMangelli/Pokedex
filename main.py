@@ -21,9 +21,6 @@ window.geometry("800x700")
 window.title("PokeDex")
 window.config(padx=10, pady=10)
 
-
-
-
 title_label = tb.Label(window, text="Pokedex", font=("Helvetica", 32))
 # title_label.config(font=("Arial", 32))
 title_label.pack(padx=10, pady=10)
@@ -63,22 +60,22 @@ def load_pokemon():
     pokemon_types.config(text=" - ".join([t for t in pokemon.types]).title())
     pokemon_height.config(text=f"Height: {pokemon.height}".title())
     pokemon_weight.config(text=f"Weight: {pokemon.weight}".title())
-    
 
 
 label_id_name = tb.Label(window, text="ID or Pokemon Name", font=("Helvetica", 28))
-# label_id_name.config(font=("Arial",20))
 label_id_name.pack(padx=10, pady=10)
 
 text_id_name = tb.Text(window, height=1)
-# text_id_name.config(font=("Arial", 20))
 text_id_name.pack(padx=10, pady=10)
+
+
 
 btn_load = tb.Style()
 btn_load.configure('INFO.TButton', font=("Helvetica", 22))
 btn_load = tb.Button(window, text="Enter", bootstyle=INFO, style="INFO.Tbutton", command=load_pokemon)
-# btn_load.config(font=("Arial", 20))
 btn_load.pack(padx=10, pady=10)
+
+window.bind('<Return>', load_pokemon)
 
 window.mainloop()
 
