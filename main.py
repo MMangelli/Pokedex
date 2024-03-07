@@ -45,8 +45,9 @@ pokemon_weight = tb.Label(window, font=("Helvetica", 10))
 pokemon_weight.pack(padx=10, pady=10)
 
 #FUNCTION Load Pokemon
-def load_pokemon():
-    pokemon = pypokedex.get(name=text_id_name.get(1.0, "end-1c"))
+def load_pokemon(event=None):
+    #pokemon = pypokedex.get(name=text_id_name.get(1.0, "end-1c"))
+    pokemon = pypokedex.get(name=text_id_name.get(1.0, "end-2c"))
     
     http = urllib3.PoolManager()
     response = http.request('GET', pokemon.sprites.front.get('default'))
@@ -75,7 +76,8 @@ btn_load.configure('INFO.TButton', font=("Helvetica", 22))
 btn_load = tb.Button(window, text="Enter", bootstyle=INFO, style="INFO.Tbutton", command=load_pokemon)
 btn_load.pack(padx=10, pady=10)
 
-window.bind('<Return>', load_pokemon)
+window.bind('<Return>', load_pokemon) #May need to figure out how to clear tb.Text after submission?  
+
 
 window.mainloop()
 
