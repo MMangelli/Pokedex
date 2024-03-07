@@ -62,8 +62,7 @@ def load_pokemon(event=None):
     pokemon_height.config(text=f"Height: {pokemon.height}".title())
     pokemon_weight.config(text=f"Weight: {pokemon.weight}".title())
     
-    for i in range(1):
-       text_id_name.delete("1.0", tb.END)
+    text_id_name.delete("1.0", tb.END)
 
 
 label_id_name = tb.Label(window, text="ID or Pokemon Name", font=("Helvetica", 28))
